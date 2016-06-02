@@ -1,3 +1,4 @@
+//handling making the csv
 var container = document.querySelector(".container");
 
 window.onload=function(){
