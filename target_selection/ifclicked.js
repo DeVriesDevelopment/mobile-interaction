@@ -2,16 +2,20 @@
 var theThing = document.querySelector("#block1");
 var container = document.querySelector(".container");
 
+if(container.addEventListener){
 container.addEventListener("click", getClickPosition, false);
+  }
 
 function getClickPosition(e) {
     var parentPosition = getPosition(container);
     var xPosition = e.clientX - parentPosition.x - (theThing.clientWidth / 2);
     var yPosition = e.clientY - parentPosition.y - (theThing.clientHeight / 2);
 
-console.log(xPosition + "px");
-console.log(yPosition + "px");
+    var xpos = xPosition + "px";
+    var ypos = yPosition + "px";
 
+    console.log(xpos);
+    console.log(ypos);
   //  theThing.style.left = xPosition + "px";
   //  theThing.style.top = yPosition + "px";
 }
