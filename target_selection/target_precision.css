@@ -5,11 +5,11 @@ body{
 }
 
 .blocks{
-  background-color: red;
-  width: 16px;
-  height: 16px;
+  background-color: gray;
+  width: 6px;
+  height: 6px;
   position: absolute;
-  /*//margin: 15px;*/
+  border: 7px solid red;
   float: left;
 }
 
@@ -47,12 +47,12 @@ body{
 }
 
 #block8{
-    top: 52%;
+  top: 52%;
   left:45%;
 }
 
 #block9{
-    top: 52%;
+  top: 52%;
   left:80%;
 }
 
@@ -61,7 +61,7 @@ body{
 }
 
 .middle{
-  background-color: gray;
+  /*background-color: gray;*/
   width: 3px;
   height: 3px;
   position: relative;;
