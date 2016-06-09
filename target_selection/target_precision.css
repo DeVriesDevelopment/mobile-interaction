@@ -19,8 +19,8 @@ body{
 
 .blocks{
   background-color: red;
-  width: 2cm;
-  height: 2cm;
+  width: 15px;
+  height: 15px;
   position: absolute;
   margin: 15px;
   float: left;
@@ -31,11 +31,11 @@ body{
 }
 
 #block2{
-  left:30%;
+  left:45%;
 }
 
 #block3{
-  left:50%;
+  left:80%;
 }
 #block4{
   top: 30%;
@@ -45,12 +45,12 @@ body{
 
 #block5{
   top: 30%;
-  left:30%;
+  left:45%;
 }
 
 #block6{
   top: 30%;
-  left:50%;
+  left:80%;
 }
 
 #block7{
@@ -61,12 +61,12 @@ body{
 
 #block8{
     top: 52%;
-  left:30%;
+  left:45%;
 }
 
 #block9{
     top: 52%;
-  left:50%;
+  left:80%;
 }
 
 .visibleClass {

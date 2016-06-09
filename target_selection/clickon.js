@@ -1,5 +1,5 @@
 //handling making the csv
-var container = document.querySelector(".container");
+var container = document.querySelector("body");
 
 window.onload=function(){
   container.addEventListener("click", getClickPosition, false);
