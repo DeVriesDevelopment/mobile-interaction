@@ -3,6 +3,7 @@ var container = document.querySelector(".container");
 
 window.onload=function(){
   container.addEventListener("click", getClickPosition, false);
+
 }
 
 function getClickPosition(e){
@@ -10,6 +11,7 @@ function getClickPosition(e){
   var x = event.clientX - parentPosition.x;     // Get the horizontal coordinate
   var y = event.clientY - parentPosition.y;     // Get the vertical coordinate
   console.log(x, y);
+  location.reload ();
 }
 
 function getPosition(el) {

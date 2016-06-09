@@ -1,121 +1,83 @@
+
 body{
-    background-color: #FFF;
-    margin: 15px;
+  background-color: #FFF;
+  margin: 15px;
 }
 
 .container{
-    margin: 0 auto;
-    background: #fff;
-    padding: 5px;
-    border: 1px solid black;
-   // position: absolute;
-    width:100%;
-    height:100%;
-    overflow: hidden;
-    position:static;
-    cursor: pointer;
+  margin: 0 auto;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid black;
+  // position: absolute;
+  width:100%;
+  height:500px;
+  overflow: hidden;
+  position:static;
+  cursor: pointer;
 }
 
 .blocks{
-    width:80%;
+  background-color: red;
+  width: 2cm;
+  height: 2cm;
+  position: absolute;
+  margin: 15px;
+  float: left;
 }
 
 #block1{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    left:20%;
-    position: relative;
-    margin: 15px;
+  left:10%;
 }
 
 #block2{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:40%;
-    margin: 15px;
+  left:30%;
 }
 
 #block3{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:60%;
-    margin: 15px;
+  left:50%;
 }
 #block4{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    left:20%;
-    position: relative;
-    margin: 15px;
-    clear:left;
+  top: 30%;
+  left:10%;
+  clear:left;
 }
 
 #block5{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:40%;
-    margin: 15px;
+  top: 30%;
+  left:30%;
 }
 
 #block6{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:60%;
-    margin: 15px;
+  top: 30%;
+  left:50%;
 }
 
 #block7{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:20%;
-    margin: 15px;
-    clear:left;
+  top: 52%;
+  left:10%;
+  clear:left;
 }
 
 #block8{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:40%;
-    margin: 15px;
+    top: 52%;
+  left:30%;
 }
 
 #block9{
-    background-color: red;
-    width: 2cm;
-    height: 2cm;
-    float: left;
-    position: relative;
-    left:60%;
-    margin: 15px;
+    top: 52%;
+  left:50%;
+}
+
+.visibleClass {
+  display: block !important;
 }
 
 .middle{
-    background-color: gray;
-    width: 3px;
-    height: 3px;
-    position: relative;
-    top: 50%;
-    left: 50%;
+  background-color: gray;
+  width: 3px;
+  height: 3px;
+  position: relative;
+  top: 50%;
+  left: 50%;
 }
