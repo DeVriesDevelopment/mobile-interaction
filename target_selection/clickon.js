@@ -5,13 +5,19 @@ window.onload=function(){
   container.addEventListener("click", getClickPosition, false);
 
 }
-
+var count = 0;
 function getClickPosition(e){
+    count += 1;
+    if (count > 5) {
+
+      console.log("done!")
+    }
+
   var parentPosition = getPosition(container);
   var x = event.clientX - parentPosition.x;     // Get the horizontal coordinate
   var y = event.clientY - parentPosition.y;     // Get the vertical coordinate
   console.log(x, y);
-  location.reload ();
+
 }
 
 function getPosition(el) {
