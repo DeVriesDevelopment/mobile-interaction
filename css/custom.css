@@ -1,0 +1,16 @@
+.test-button{
+    width:100px;
+    height:25px;
+    margin-bottom: 10px;
+}
+
+.submenu-button{
+    width:70px;
+    height: 70px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.complete{
+    background-color:#00FF00;
+}
