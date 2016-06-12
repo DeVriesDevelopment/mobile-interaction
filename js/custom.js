@@ -88,7 +88,14 @@ function createTest()
 function completeSubtest(test, type)
 {
     database.executeQuery('UPDATE subtest SET complete="true" WHERE test_id =' + test + ' AND subtest_type=' + type, function(){
-        window.location.href = 'submenu.html';
+        if(type == 0 || type == 2 || type == 4)
+        {
+            window.location.href = '../submenu.html';
+        }
+        else
+        {
+            window.location.href = '/submenu.html';
+        }
     });
 }
 

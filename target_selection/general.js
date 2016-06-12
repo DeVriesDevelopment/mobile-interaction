@@ -13,14 +13,17 @@ var start = new Date();
 
 function onClick(e){
   count++;
-  var data = [["Name", "X distance to target", "Y distance to target", "Good/Bad"],[Rows, Xerror, Yerror, Good]];
-  var csvContent = "data.text/csv;charset=utf-8,";
-
-  data.forEach(function(infoArray, index){
-    dataString = infoArray.join("\n");
-    csvContent += index < data.length ? dataString + ",": dataString;
-  });
   if( count >= 8 ){
+    var data = [["Name", "X distance to target", "Y distance to target", "Good/Bad"]];
+    for(var i = 0; i < Rows.length; i++)
+    {
+      data.push([Rows[i], Xerror[i], Yerror[i], Good[i]]);
+    }
+    var csvContent = "data.text/csv;charset=utf-8,";
+    data.forEach(function(infoArray, index){
+      dataString = infoArray.join(",");
+      csvContent += index < data.length ? dataString + "\n" : dataString;
+    });
     var end = new Date()-start;
     csvContent += "\n" + end + "ms";
     console.log(csvContent);

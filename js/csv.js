@@ -1,7 +1,6 @@
 var testName;
 
 function _saveCsv(csv) {
-    console.log("testtest")
     idfromtest = localStorage.testId;
     window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function (dirEntry) {
         console.log('file system open: ' + dirEntry.name);
