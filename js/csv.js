@@ -26,7 +26,7 @@ function _saveCsv(csv) {
         function createFolder(rootDirEntry, testName) {
             rootDirEntry.getDirectory('mobile-interaction', {create: true}, function (dirEntry) {
                 dirEntry.getDirectory(testName, {create: true}, function (subDirEntry) {
-                    createFile(subDirEntry, testName + "_" + localStorage.subTestType + ".csv", false);
+                    createFile(subDirEntry, testName + "_" + localStorage.subTestType, false);
                 }, onErrorGetDir);
             }, onErrorGetDir);
         }
@@ -68,11 +68,11 @@ function _saveCsv(csv) {
     }
 }
 
-function saveCsv(content)
+function saveCsv()
 {
     database.executeQuery('SELECT * FROM test WHERE test_id=' + localStorage.testId, function (tx, results)
     {
         testName = results.rows[0].name;
-        _saveCsv(content)
+        _saveCsv()
     })
 }

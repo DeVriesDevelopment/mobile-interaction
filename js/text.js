@@ -5,14 +5,15 @@ window.onload = function() {
     var inputCount = 0;
     var errors = 0;
     var isWrong = false;
-    var start = new Date();
+    var start;
     var completionTime = 0;
-
-    createSubtest(localStorage.testId, localStorage.subTestType);
+    var isFirst = true;
 
     loadSentence();
     document.getElementById("textarea").focus();
     document.getElementById("textarea").oninput = checkforErrors;
+
+    createSubtest(localStorage.testId, localStorage.subTestType);
 
     function loadSentence() {
         var sentenceArea = document.getElementById('sentence');
@@ -20,6 +21,11 @@ window.onload = function() {
     }
 
     function checkforErrors(event) {
+        if(isFirst)
+        {
+            isFirst = false;
+            start = new Date();
+        }
         if (sentences[currentSentence] == event.target.value) {
             if (currentSentence < 2) {
                 nextSentence();
@@ -60,6 +66,7 @@ window.onload = function() {
     }
 
     function createCsv() {
+        console.log("createCsv()");
         var testId = localStorage.testId;
         database.executeQuery('SELECT * FROM test WHERE test_id=' + testId, function (tx, results) {
             var data = [["Name", "Errors", "Time (in ms)"], [results.rows[0].name, errors, completionTime]];

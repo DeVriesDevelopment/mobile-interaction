@@ -63,7 +63,17 @@ function getCompleted(type, results)
 
 function redirectSubtest(type)
 {
-    var url = (type % 2 == 0) ? "target_selection/target_selection.html" : "text.html";
+    if(type == 1 || type == 3 || type == 5)
+    {
+        url = "text.html";
+    }else if(type == 0 || type == 2)
+    {
+        url = "target_selection/target_selection1en3.html";
+    }
+    else if(type == 4)
+    {
+        url = "target_selection/target_selection5.html";
+    }
     localStorage.subTestType = type;
     window.location.href = url;
 }
