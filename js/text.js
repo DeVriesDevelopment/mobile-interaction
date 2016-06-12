@@ -62,11 +62,9 @@ window.onload = function() {
     function complete() {
         completionTime = new Date() - start;
         createCsv();
-        completeSubtest(localStorage.testId, localStorage.subTestType);
     }
 
     function createCsv() {
-        console.log("createCsv()");
         var testId = localStorage.testId;
         database.executeQuery('SELECT * FROM test WHERE test_id=' + testId, function (tx, results) {
             var data = [["Name", "Errors", "Time (in ms)"], [results.rows[0].name, errors, completionTime]];
