@@ -2,7 +2,8 @@ var container = document.querySelector("body");
 
 window.onload=function(){
   hide(document.querySelectorAll('.blocks'));
-  document.body.addEventListener("click", onClick);
+  container.addEventListener("click", onClick);
+  // document.body.addEventListener("click", onClick);
 }
 
 var xpos, ypos; //position of the random block
@@ -17,7 +18,7 @@ function hide (elements) {
   errory = clicky - ypos;
   console.log(errorx, errory);
 
-  saveCsv(errorx, errory);
+  //  saveCsv(errorx, errory);
 
   var random = Math.floor((Math.random() * $('.blocks').size()));
   elements = elements.length ? elements : [elements];
@@ -55,20 +56,18 @@ function parentpos(){
   clicky = event.clientY - parentPosition.y;     // Get the vertical coordinate
 }
 
-var onClick = (function(){
-  return function(){
-    count++;
-    if( count >= 5 ){
-      var x = document.getElementsByClassName("blocks");
-      var i;
-      for (i = 0; i < x.length; i++) {
-        x[i].style.width = "12px";
-        x[i].style.height = "12px";
-        x[i].style.border = "14px solid red";
-      }
-    }
-    if( count >= 10 ){
-      location.replace("submenu.html"); //terug
-    }
+function onClick(e){
+  parentpos();
+  count++;
+  if( count >= 5 ){
+    // saveCsv();
+    location.replace("submenu.html"); //terug
+    // var x = document.getElementsByClassName("blocks");
+    // var i;
+    // for (i = 0; i < x.length; i++) {
+    //   x[i].style.width = "12px";
+    //   x[i].style.height = "12px";
+    //   x[i].style.border = "14px solid red";
+    // }
   }
-})();
+}

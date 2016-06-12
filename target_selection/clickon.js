@@ -1,9 +1,3 @@
-// function getClickPosition(e){
-//   var parentPosition = getPosition(container);
-//   var x = event.clientX - parentPosition.x;     // Get the horizontal coordinate
-//   var y = event.clientY - parentPosition.y;     // Get the vertical coordinate
-//   console.log(x, y);
-// }
 
 function getPosition(el) {
   var xPosition = 0;
