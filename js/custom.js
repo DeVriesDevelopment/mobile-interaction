@@ -75,4 +75,23 @@ function createTest()
     window.location.href = 'tests.html';
 }
 
+function completeSubtest(test, type)
+{
+    database.executeQuery('UPDATE subtest SET complete="true" WHERE test_id =' + test + ' AND subtest_type=' + type, function(){
+        window.location.href = 'submenu.html';
+    });
+}
+
+function createSubtest(test, subtestType)
+{
+    database.executeQuery('SELECT * FROM subtest WHERE test_id='+test+" AND " + "subtest_type=" + subtestType, function(tx, results)
+    {
+        if(results.rows.length < 1)
+        {
+            database.executeQuery("INSERT INTO subtest (test_id, subtest_type, complete) VALUES (" + test + ", " + subtestType + ", 'false')");
+        }
+    });
+
+}
+
 
