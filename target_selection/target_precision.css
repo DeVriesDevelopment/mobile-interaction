@@ -30,10 +30,10 @@ body{
   clear:left;
 }
 
-#block5{
+/*#block5{
   top: 30%;
   left:45%;
-}
+}*/
 
 #block6{
   top: 30%;
@@ -56,8 +56,13 @@ body{
   left:80%;
 }
 
-.visibleClass {
-  display: block !important;
+#middle_click{
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: fixed;;
+  top: 32%;
+  left:47%;
 }
 
 .middle{
