@@ -3,56 +3,57 @@ var container = document.querySelector("body");
 window.onload=function(){
   hide(document.querySelectorAll('.blocks'));
   document.body.addEventListener("click", onClick);
-  //container.addEventListener("click", getClickPosition, false);
 }
-var xpos, ypos;
-var count = 0;
+
+var xpos, ypos; //position of the random block
+var count = 0; //counter for the number of tests
+var randompos; //the random block
+var clickx = 0; //the x click position
+var clicky = 0; //the y click position
+var errorx, errory; //the amount by which it is off
 
 function hide (elements) {
+  errorx = clickx - xpos;
+  errory = clicky - ypos;
+  console.log(errorx, errory);
+
+  saveCsv(errorx, errory);
+
   var random = Math.floor((Math.random() * $('.blocks').size()));
   elements = elements.length ? elements : [elements];
   for (var index = 0; index < elements.length; index++) {
     elements[index].style.display = 'none';      // Hide
     elements[random].style.display = 'block';     // Show
   }
-  var d = getPosition(elements[random]);
+  randompos = getPosition(elements[random]);
   if(count < 5){
-    places(d);
+    places();
   }
   if (count >= 5){
-    replaces(d);
+    replaces();
   }
 }
 
-function places(r){
-  xpos = r.x + 4;
-  ypos = r.y + 4;
-  var parentPosition = getPosition(container);
-  var x = event.clientX - parentPosition.x;     // Get the horizontal coordinate
-  var y = event.clientY - parentPosition.y;     // Get the vertical coordinate
-  console.log(x, y);
-  console.log(xpos, ypos);
-  // a = x - xpos;
-  // b = y - ypos;
-  // console.log(a,b);
+function places(){
+  xpos = randompos.x + 4;
+  ypos = randompos.y + 4;
 }
 
-function replaces(r){
-  xpos = r.x + 7;
-  ypos = r.y + 7;
-  var parentPosition = getPosition(container);
-  var x = event.clientX - parentPosition.x;     // Get the horizontal coordinate
-  var y = event.clientY - parentPosition.y;     // Get the vertical coordinate
-  console.log(x, y);
-  console.log(xpos, ypos);
-  // a = x - xpos;
-  // b = y - ypos;
-  // console.log(a,b);
+function replaces(){
+  xpos = randompos.x + 7;
+  ypos = randompos.y + 7;
 }
 
 $( ".blocks" ).click(function() {
+  parentpos();
   hide(document.querySelectorAll('.blocks'));
 });
+
+function parentpos(){
+  var parentPosition = getPosition(container);
+  clickx = event.clientX - parentPosition.x;     // Get the horizontal coordinate
+  clicky = event.clientY - parentPosition.y;     // Get the vertical coordinate
+}
 
 var onClick = (function(){
   return function(){
@@ -67,8 +68,7 @@ var onClick = (function(){
       }
     }
     if( count >= 10 ){
-
-      //  location.replace(""); //terug
+      location.replace("submenu.html"); //terug
     }
   }
 })();
