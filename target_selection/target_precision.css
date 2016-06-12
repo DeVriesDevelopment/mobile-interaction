@@ -67,18 +67,20 @@ left:45%;
 
 #middle_click{
   background-color: black;
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   position: fixed;;
-  top: 32%;
-  left:47%;
+  top: 30%;
+  left:45%;
+  border: 7px solid white;
 }
 
-.middle{
-  /*background-color: gray;*/
-  width: 3px;
-  height: 3px;
-  position: relative;;
-  top: 50%;
-  left: 50%;
+#middle_click2{
+  background-color: black;
+  width: 12px;
+  height: 12px;
+  position: fixed;;
+  top: 30%;
+  left:45%;
+  border: 14px solid white;
 }

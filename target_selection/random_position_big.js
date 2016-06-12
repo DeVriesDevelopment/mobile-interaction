@@ -1,7 +1,7 @@
 var container = document.querySelector("body");
 
 window.onload=function(){
-  hide(document.querySelectorAll('.blocks'));
+  hide(document.querySelectorAll('.blocksbig'));
   container.addEventListener("click", onClick);
 }
 
@@ -19,7 +19,7 @@ function hide (elements) {
 
   //  saveCsv(errorx, errory);
 
-  var random = Math.floor((Math.random() * $('.blocks').size()));
+  var random = Math.floor((Math.random() * $('.blocksbig').size()));
   elements = elements.length ? elements : [elements];
   for (var index = 0; index < elements.length; index++) {
     elements[index].style.display = 'none';      // Hide
@@ -29,21 +29,21 @@ function hide (elements) {
   places();
 }
 
-$( ".blocks" ).click(function() {
+$( ".blocksbig" ).click(function() {
   parentpos();
-  hide(document.querySelectorAll('.blocks'));
+  hide(document.querySelectorAll('.blocksbig'));
 });
 
 function places(){
-  xpos = randompos.x + 4;
-  ypos = randompos.y + 4;
+  xpos = randompos.x + 7;
+  ypos = randompos.y + 7;
 }
 
-$( "#middle_click" ).click(function() {
+$( "#middle_click2" ).click(function() {
   parentpos();
   var randomp = getPosition(this);
-  var t = randomp.x + 4;
-  var g = randomp.y + 4;
+  var t = randomp.x + 7;
+  var g = randomp.y + 7;
   places();
   errorx = clickx - t;
   errory = clicky - g;
