@@ -30,12 +30,13 @@ function hide (elements) {
   places();
 }
 
-if ($("body").data("title") === "Target Precision 1 and 3") {
+if ($("body").data("title") === "onethree") {
   function places(){
     xpos = randompos.x + 4;
     ypos = randompos.y + 4;
   }
 }
+
 
 if ($("body").data("title") === "Target Precision 5") {
   function places(){
