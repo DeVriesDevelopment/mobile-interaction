@@ -9,11 +9,22 @@ var randompos; //the random block
 var clickx = 0; //the x click position
 var clicky = 0; //the y click position
 var errorx, errory; //the amount by which it is off
+var start = new Date();
 
 function onClick(e){
   count++;
+  var data = [["Name", "X distance to target", "Y distance to target", "Good/Bad"],[Rows, Xerror, Yerror, Good]];
+  var csvContent = "data.text/csv;charset=utf-8,";
+
+  data.forEach(function(infoArray, index){
+    dataString = infoArray.join("\n");
+    csvContent += index < data.length ? dataString + ",": dataString;
+  });
   if( count >= 8 ){
-    saveCsv(Name, Rows, Xerror, Yerror, Good);
+    var end = new Date()-start;
+    csvContent += "\n" + end + "ms";
+    console.log(csvContent);
+    // saveCsv(csvContent);
   }
 }
 
