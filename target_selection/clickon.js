@@ -11,7 +11,7 @@ function getClickPosition(e){
   console.log(x, y);
 }
 
-function getPosition(el) {
+function getPosition(el) { 
   var xPosition = 0;
   var yPosition = 0;
 
