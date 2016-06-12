@@ -3,7 +3,6 @@ var container = document.querySelector("body");
 window.onload=function(){
   hide(document.querySelectorAll('.blocks'));
   container.addEventListener("click", onClick);
-  // document.body.addEventListener("click", onClick);
 }
 
 var xpos, ypos; //position of the random block
@@ -30,25 +29,24 @@ function hide (elements) {
   places();
 }
 
-if ($("body").data("title") === "onethree") {
-  function places(){
-    xpos = randompos.x + 4;
-    ypos = randompos.y + 4;
-  }
-}
-
-
-if ($("body").data("title") === "Target Precision 5") {
-  function places(){
-    xpos = randompos.x + 7;
-    ypos = randompos.y + 7;
-  }
-}
-
 $( ".blocks" ).click(function() {
   parentpos();
   hide(document.querySelectorAll('.blocks'));
 });
+
+
+if ($("body").data("title") === "onethree") {
+  function places(){
+    if ($("body").data("title") === "onethree") {
+      xpos = randompos.x + 4;
+      ypos = randompos.y + 4;
+    }
+    if ($("body").data("title") === "five") {
+      xpos = randompos.x + 7;
+      ypos = randompos.y + 7;
+    }
+  }
+}
 
 function parentpos(){
   var parentPosition = getPosition(container);
@@ -59,18 +57,9 @@ function parentpos(){
 function onClick(e){
   parentpos();
   count++;
-  if( count >= 5 ){
+  if( count >= 8 ){
     // saveCsv();
-    //  location.replace("submenu.html"); //terug
-
-
-    // var x = document.getElementsByClassName("blocks");
-    // var i;
-    // for (i = 0; i < x.length; i++) {
-    //   x[i].style.width = "12px";
-    //   x[i].style.height = "12px";
-    //   x[i].style.border = "14px solid red";
-    // }
+    // location.replace("submenu.html"); //terug
   }
 }
 
