@@ -39,10 +39,10 @@ body{
   clear:left;
 }
 
-/*#block5{
+#block5{
 top: 30%;
 left:45%;
-}*/
+}
 
 #block6{
   top: 30%;
@@ -50,21 +50,21 @@ left:45%;
 }
 
 #block7{
-  top: 52%;
+  top: 60%;
   left:10%;
   clear:left;
 }
 
 #block8{
-  top: 52%;
+  top: 60%;
   left:45%;
 }
 
 #block9{
-  top: 52%;
+  top: 60%;
   left:80%;
 }
-
+/*
 #middle_click{
   background-color: black;
   width: 6px;
@@ -83,4 +83,4 @@ left:45%;
   top: 30%;
   left:45%;
   border: 14px solid white;
-}
+}*/
