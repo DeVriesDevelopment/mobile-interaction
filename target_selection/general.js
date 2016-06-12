@@ -14,7 +14,6 @@ function onClick(e){
   count++;
   if( count >= 8 ){
     saveCsv(Name, Rows, Xerror, Yerror, Good);
-    completeSubtest(localStorage.testId, localStorage.subTestType);
   }
 }
 
