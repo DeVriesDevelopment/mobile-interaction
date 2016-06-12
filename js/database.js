@@ -26,7 +26,14 @@ MbDatabase.prototype.installer = function()
     if(getCookie('mob-installed') == 'true')
     {return;}
     this.executeQuery("CREATE TABLE IF NOT EXISTS test (test_id INTEGER PRIMARY KEY, name VARCHAR)");
-    this.executeQuery("INSERT INTO test (name) VALUES ('test')");
+    this.executeQuery("CREATE TABLE IF NOT EXISTS subtest (subtest_id INTEGER PRIMARY KEY, subtest_type VARCHAR, test_id VARCHAR, complete BOOLEAN)");
+    this.executeQuery("CREATE TABLE IF NOT EXISTS subtest_type (type_id INTEGER PRIMARY KEY, description VARCHAR)");
+    this.executeQuery("INSERT INTO subtest_type (description) VALUES ('Target Selection staand')");
+    this.executeQuery("INSERT INTO subtest_type (description) VALUES ('Typing Test staand')");
+    this.executeQuery("INSERT INTO subtest_type (description) VALUES ('Target Selection fietsend')");
+    this.executeQuery("INSERT INTO subtest_type (description) VALUES ('Typing Test fietsend')");
+    this.executeQuery("INSERT INTO subtest_type (description) VALUES ('Target Selection Improved')");
+    this.executeQuery("INSERT INTO subtest_type (description) VALUES ('Typing Test improved')");
     setCookie('mob-installed', 'true')
 }
 
