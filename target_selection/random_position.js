@@ -27,22 +27,21 @@ function hide (elements) {
     elements[random].style.display = 'block';     // Show
   }
   randompos = getPosition(elements[random]);
-  if(count < 5){
-    places();
-  }
-  if (count >= 5){
-    replaces();
+  places();
+}
+
+if ($("body").data("title") === "Target Precision 1 and 3") {
+  function places(){
+    xpos = randompos.x + 4;
+    ypos = randompos.y + 4;
   }
 }
 
-function places(){
-  xpos = randompos.x + 4;
-  ypos = randompos.y + 4;
-}
-
-function replaces(){
-  xpos = randompos.x + 7;
-  ypos = randompos.y + 7;
+if ($("body").data("title") === "Target Precision 5") {
+  function places(){
+    xpos = randompos.x + 7;
+    ypos = randompos.y + 7;
+  }
 }
 
 $( ".blocks" ).click(function() {
@@ -61,7 +60,9 @@ function onClick(e){
   count++;
   if( count >= 5 ){
     // saveCsv();
-    location.replace("submenu.html"); //terug
+    //  location.replace("submenu.html"); //terug
+
+
     // var x = document.getElementsByClassName("blocks");
     // var i;
     // for (i = 0; i < x.length; i++) {
