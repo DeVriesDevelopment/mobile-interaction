@@ -3,7 +3,7 @@ function onClick(e){
   count++;
   if( count >= 8 ){
     // saveCsv();
-    // location.replace("submenu.html"); //terug
+    location.replace("submenu.html"); //terug
   }
 }
 
