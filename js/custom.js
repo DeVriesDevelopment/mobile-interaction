@@ -87,6 +87,7 @@ function createTest()
 
 function completeSubtest(test, type)
 {
+    console.log("completing subtest" + " : type - " + type)
     database.executeQuery('UPDATE subtest SET complete="true" WHERE test_id =' + test + ' AND subtest_type=' + type, function(){
         if(type == 0 || type == 2 || type == 4)
         {
@@ -94,7 +95,7 @@ function completeSubtest(test, type)
         }
         else
         {
-            window.location.href = '/submenu.html';
+            window.location.href = 'submenu.html';
         }
     });
 }
@@ -103,8 +104,10 @@ function createSubtest(test, subtestType)
 {
     database.executeQuery('SELECT * FROM subtest WHERE test_id='+test+" AND " + "subtest_type=" + subtestType, function(tx, results)
     {
+        console.log("row count: " + results.rows.length + " : type - " + subtestType);
         if(results.rows.length < 1)
         {
+            console.log("creating subtest" + " : type - " + subtestType);
             database.executeQuery("INSERT INTO subtest (test_id, subtest_type, complete) VALUES (" + test + ", " + subtestType + ", 'false')");
         }
     });

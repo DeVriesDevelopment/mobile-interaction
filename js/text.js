@@ -68,7 +68,7 @@ window.onload = function() {
         var testId = localStorage.testId;
         database.executeQuery('SELECT * FROM test WHERE test_id=' + testId, function (tx, results) {
             var data = [["Name", "Errors", "Time (in ms)"], [results.rows[0].name, errors, completionTime]];
-            var csvContent = "data:text/csv;charset=utf-8,";
+            var csvContent = "";
             data.forEach(function (infoArray, index) {
 
                 dataString = infoArray.join(",");

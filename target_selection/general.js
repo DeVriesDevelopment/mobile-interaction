@@ -11,7 +11,9 @@ var clicky = 0; //the y click position
 var errorx, errory; //the amount by which it is off
 var start = new Date();
 
+
 function onClick(e){
+  createSubtest(localStorage.testId, localStorage.subTestType);
   count++;
   if( count >= 8 ){
     var data = [["Name", "X distance to target", "Y distance to target", "Good/Bad"]];
@@ -19,15 +21,14 @@ function onClick(e){
     {
       data.push([Rows[i], Xerror[i], Yerror[i], Good[i]]);
     }
-    var csvContent = "data.text/csv;charset=utf-8,";
+    var csvContent = "";
     data.forEach(function(infoArray, index){
       dataString = infoArray.join(",");
       csvContent += index < data.length ? dataString + "\n" : dataString;
     });
     var end = new Date()-start;
     csvContent += "\n" + end + "ms";
-    console.log(csvContent);
-    // saveCsv(csvContent);
+    saveCsv(csvContent);
   }
 }
 
@@ -84,6 +85,5 @@ $(window).click(function(e){
     Good.push(0);
     Xerror.push(errorx);
     Yerror.push(errory);
-    console.log(Rows,Xerror, Yerror, Good);
   }
 });
