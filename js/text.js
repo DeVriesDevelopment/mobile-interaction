@@ -1,6 +1,6 @@
 
 window.onload = function() {
-    var sentences = ["This is sentence 1", "This is sentence 2", "This is sentence 3"]
+    var sentences = ["Om 18 uur zal ik bij de Jumbo zijn", "is het gelukt om de opdracht af te krijgen?", "Toy Story is echt een leuke film!"]
     var currentSentence = 0;
     var inputCount = 0;
     var errors = 0;

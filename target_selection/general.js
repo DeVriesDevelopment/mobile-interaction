@@ -15,7 +15,7 @@ var start = new Date();
 function onClick(e){
   createSubtest(localStorage.testId, localStorage.subTestType);
   count++;
-  if( count >= 8 ){
+  if( count >= 20 ){
     var data = [["Name", "X distance to target", "Y distance to target", "Good/Bad"]];
     for(var i = 0; i < Rows.length; i++)
     {
